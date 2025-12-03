@@ -1,6 +1,6 @@
 module main
 
-import scheduler
+import scheduler {@go}
 import minicoro
 import time
 
@@ -13,7 +13,7 @@ fn coro_fn(co &minicoro.Coro) {
 	}
 }
 
-fn coro_fn2(co &minicoro.Coro) {	
+fn coro_fn2(co &minicoro.Coro) {
 	println('coro 2 before')
 	for {
 		println('coro2')
@@ -27,18 +27,9 @@ fn main() {
 		println('main done')
 	}
 	println('Coroutine Example')
-	scheduler.go(coro_fn)
-	scheduler.go(coro_fn2)
+	@go(coro_fn)
+	@go(coro_fn2)
 
 	println('sleeping for 1 second')
 	time.sleep(1 * time.second)
-
-	// or
-
-	// mut manager := scheduler.new_manager()
-	// manager.add(coro_fn)
-	// manager.add(coro_fn2)
-	// manager.add(coro_fn)
-	// manager.add(coro_fn2)
-	// manager.run()
 }
