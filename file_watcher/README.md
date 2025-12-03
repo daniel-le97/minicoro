@@ -10,7 +10,8 @@ The `file_watcher` module provides a unified API for watching file system change
 - **Linux**: Uses `inotify` syscalls
 - **Other platforms**: Error on unsupported platforms
 
-## API Reference
+
+## API Referenc
 
 ### Types
 
