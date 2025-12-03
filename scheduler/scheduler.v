@@ -82,7 +82,7 @@ pub fn run(f fn (&minicoro.Coro)) {
 	manager.add(f)
 }
 
-// Legacy alias for compatibility
+// automatically spawn a coroutine
 pub fn @go(f fn (&minicoro.Coro)) {
 	run(f)
 }

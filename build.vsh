@@ -48,7 +48,6 @@ context.task(
 	help: 'Build the app in production mode, generates documentation, and releases the build on Git'
 	// depends: ['_mkdirs', 'doc', 'test.txt']
 	run: fn (self build.Task) ! {
-
 	}
 )
 
@@ -82,12 +81,12 @@ context.task(
 )
 
 context.task(
-	name: 'docs.view'
-	help: 'build the documentation'
+	name:    'docs.view'
+	help:    'build the documentation'
 	depends: ['docs']
-	run:  fn (self build.Task) ! {
-		println("look at the docs on http://localhost:8080")
-		file.serve(folder: "./docs/html", on: ":8080")
+	run:     fn (self build.Task) ! {
+		println('look at the docs on http://localhost:8080')
+		file.serve(folder: './docs/html', on: ':8080')
 	}
 )
 
@@ -104,8 +103,6 @@ context.task(
 		}
 	}
 )
-
-
 
 context.task(
 	name: 'symlink'

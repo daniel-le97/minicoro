@@ -1,6 +1,6 @@
 module main
 
-import scheduler {@go}
+import scheduler { @go }
 import minicoro
 import time
 
